@@ -1,8 +1,9 @@
 package rekkyn.pressureplaids;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
+import net.minecraft.block.Block;
+import net.minecraft.block.EnumMobType;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -13,6 +14,9 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkMod.SidedPacketHandler;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
 @Mod(modid = PressurePlaids.modid, name = "Pressure Plaids", version = "-1.0")
@@ -26,6 +30,11 @@ import cpw.mods.fml.common.network.NetworkMod;
 public class PressurePlaids {
     
     public static final String modid = "PressurePlaids";
+    
+    public static final Block pressurePlaid = new Block(500, /*EnumMobType.everything,*/ Material.grass)
+    .setHardness(1F).setStepSound(Block.soundStoneFootstep)
+    .setUnlocalizedName("pressurePlaid").setCreativeTab(CreativeTabs.tabRedstone);
+
     
     
     @Instance("PressurePlaids")
@@ -41,6 +50,10 @@ public class PressurePlaids {
     @Init
     public void load(FMLInitializationEvent event) {
             proxy.registerRenderers();
+            
+            GameRegistry.registerBlock(pressurePlaid, "pressurePlaid");
+            LanguageRegistry.addName(pressurePlaid, "Pressure Plaid!");
+
     }
     
     @PostInit
