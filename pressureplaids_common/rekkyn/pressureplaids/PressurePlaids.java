@@ -31,7 +31,7 @@ public class PressurePlaids {
     
     public static final String modid = "PressurePlaids";
     
-    public static final Block pressurePlaid = new Block(500, /*EnumMobType.everything,*/ Material.grass)
+    public static final Block pressurePlaid = new BlockPressurePlaid(500, EnumMobType.everything, Material.grass)
     .setHardness(1F).setStepSound(Block.soundStoneFootstep)
     .setUnlocalizedName("pressurePlaid").setCreativeTab(CreativeTabs.tabRedstone);
 
