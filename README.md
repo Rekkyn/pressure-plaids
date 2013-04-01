@@ -1,4 +1,4 @@
 pressure-plaids
 ===============
 
-It's not a pressure pad, not a pressure plate, BUT A SUPER AWESOME MEGA POWER PRESSURE PLAID!! BAM!
+It's not a pressure plate, not a pressure pad, but a pressure PLAID!??! WOW!
