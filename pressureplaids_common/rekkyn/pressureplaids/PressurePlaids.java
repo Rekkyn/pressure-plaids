@@ -45,7 +45,10 @@ public class PressurePlaids {
     
     @Init
     public void load(FMLInitializationEvent event) {
-        proxy.registerRenderers();
+        proxy.registerTiles();
+        proxy.registerBlocks();
+        proxy.addNames();
+        proxy.addRecipes();
         
         GameRegistry.registerBlock(pressurePlaid, "pressurePlaid");
         LanguageRegistry.addName(pressurePlaid, "Pressure Plaid!");

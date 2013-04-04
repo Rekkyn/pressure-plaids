@@ -5,7 +5,7 @@ import rekkyn.pressureplaids.CommonProxy;
 public class ClientProxy extends CommonProxy {
     
     @Override
-    public void registerRenderers() {
+    public void registerRenderInformation() {
     }
     
 }

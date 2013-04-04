@@ -4,10 +4,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -28,6 +32,14 @@ public class BlockPressurePlaid extends Block {
         float dim = 0.0625F;
         this.setBlockBounds(dim, 0.0F, dim, 1.0F - dim, 0.03125F, 1.0F - dim);
     }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister iconRegister)
+    {
+             blockIcon = iconRegister.registerIcon("PressurePlaids:pressurePlaid");
+    }
+
     
     /**
      * How many world ticks before ticking
