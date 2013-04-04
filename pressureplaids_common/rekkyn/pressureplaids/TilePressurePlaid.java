@@ -136,4 +136,14 @@ public class TilePressurePlaid extends TileEntity implements IInventory{
         public String getInvName(){
         return "Pressure Plaid";
         }
+
+        @Override
+        public boolean isInvNameLocalized() {
+            return true;
+        }
+
+        @Override
+        public boolean isStackValidForSlot(int i, ItemStack itemstack) {
+            return true;
+        }
 }

@@ -24,11 +24,10 @@ public class GuiPressurePlaid extends GuiContainer{
         @Override
         protected void drawGuiContainerBackgroundLayer(float f, int i, int j){
        
-                int picture = mc.renderEngine.getTexture("/rekkyn/pressureplaids/pressureplaidGUI.png");
                
                 GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
                
-                this.mc.renderEngine.bindTexture(picture);
+                this.mc.renderEngine.bindTexture("/rekkyn/pressureplaids/pressureplaidGUI.png");
                
                 int x = (width - xSize) / 2;
                

@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
@@ -13,13 +13,14 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockPressurePlaid extends Block {
+public class BlockPressurePlaid extends BlockContainer {
     /** The mob type that can trigger this pressure plate. */
     private EnumMobType triggerMobType;
     
@@ -322,15 +323,20 @@ public class BlockPressurePlaid extends Block {
         return 1;
     }
     
-    /*
-     * @Override public boolean onBlockActivated(World world, int x, int y, int
-     * z, EntityPlayer player, int i, float f, float g, float t) { TileEntity
-     * tile_entity = world.getBlockTileEntity(x, y, z); if (tile_entity == null
-     * || player.isSneaking()) { return false; }
-     * player.openGui(PressurePlaids.instance, 0, world, x, y, z); return true;
-     * }
-     * @Override public TileEntity createNewTileEntity(World var1) { return new
-     * TilePressurePlaid(); }
-     */
+    @Override
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int i, float f, float g,
+            float t) {
+        TileEntity tile_entity = world.getBlockTileEntity(x, y, z);
+        if (tile_entity == null || player.isSneaking()) {
+            return false;
+        }
+        player.openGui(PressurePlaids.instance, 0, world, x, y, z);
+        return true;
+    }
+    
+    @Override
+    public TileEntity createNewTileEntity(World var1) {
+        return new TilePressurePlaid();
+    }
     
 }
