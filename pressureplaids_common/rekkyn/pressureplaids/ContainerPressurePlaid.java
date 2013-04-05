@@ -10,17 +10,17 @@ import net.minecraft.item.ItemStack;
 public class ContainerPressurePlaid extends Container{
         protected TilePressurePlaid tile_entity;
        
-        public ContainerPressurePlaid(TilePressurePlaid tile_entity, InventoryPlayer player_inventory){
-                this.tile_entity = tile_entity;
+        public ContainerPressurePlaid(InventoryPlayer inventoryPlayer, TilePressurePlaid tileEntity){
+                this.tile_entity = tileEntity;
                 int o=0;
                 for(int q = 0; q <3; q++){
                 for(int p = 0; p <9; p++){
                
                
-                addSlotToContainer(new Slot(tile_entity, o, 9+p*18, 9+q*18));
+                addSlotToContainer(new Slot(tileEntity, o, 9+p*18, 9+q*18));
                
                
-                bindPlayerInventory(player_inventory);
+                bindPlayerInventory(inventoryPlayer);
                 o++;
                 }
         }}

@@ -9,7 +9,7 @@ import org.lwjgl.opengl.GL11;
  
 public class GuiPressurePlaid extends GuiContainer{
         public GuiPressurePlaid(InventoryPlayer player_inventory, TilePressurePlaid tile_entity){
-                super(new ContainerPressurePlaid(tile_entity, player_inventory));
+                super(new ContainerPressurePlaid(player_inventory, tile_entity));
         }
        
        
@@ -27,7 +27,7 @@ public class GuiPressurePlaid extends GuiContainer{
                
                 GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
                
-                this.mc.renderEngine.bindTexture("/rekkyn/pressureplaids/pressureplaidGUI.png");
+                this.mc.renderEngine.bindTexture("/mods/PressurePlaids/textures/gui/pressureplaidGUI.png");
                
                 int x = (width - xSize) / 2;
                

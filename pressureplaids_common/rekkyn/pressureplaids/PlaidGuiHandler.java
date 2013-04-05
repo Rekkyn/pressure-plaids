@@ -14,7 +14,7 @@ public class PlaidGuiHandler implements IGuiHandler{
                
                 if(tile_entity instanceof TilePressurePlaid){
                
-                        return new ContainerPressurePlaid((TilePressurePlaid) tile_entity, player.inventory);
+                        return new ContainerPressurePlaid(player.inventory, (TilePressurePlaid) tile_entity);
                 }
                
                
